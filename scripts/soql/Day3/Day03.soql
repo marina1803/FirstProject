@@ -1,0 +1,52 @@
+
+
+//SELECT Name, (SELECT Name, Email FROM Contacts)
+//FROM ACCOUNT
+//ORDER BY CreatedDate ASC
+
+//SELECT Name,(SELECT Subject FROM Cases) 
+//FROM Account
+//ORDER BY CreatedDate ASC
+
+// Get All the Contact Name
+// and Case Subject,Status  of Cases assiciated with those contacts
+// from Contact Object
+
+//SELECT Name, (SELECT Subject, Status FROM Cases)
+//FROM Contact
+
+// Get All the Contact Name
+// and Book name,Price of Books assiciated with those contact
+// from Contact Object
+
+//SELECT Name, (SELECT Name, Price__c FROM Books__r)
+//FROM Contact
+
+//get the Name of the Account
+// if it has child contact with Last Name Forbes
+
+//Get the name of the account if it has child contact with LastName 'Forbes'
+//STEP 1
+//SELECT AccountId 
+//FROM Contact 
+//WHERE LastName = 'Forbes'
+
+//STEP 2
+//SELECT Name
+//FROM Account
+//WHERE Id = '001Dn00000FCkzMIAT'
+
+//FINAL STEP
+//SELECT Name
+//FROM Account
+//WHERE Id IN  (SELECT AccountId FROM Contact WHERE LastName = 'Forbes')
+
+ //Get all the account names if the child contacts last name starts with 'F'
+ 
+ //Get all the account names if the child contacts last name starts with 'F'
+ // Also display all the ocntact alog with account name 
+SELECT Name, (SELECT FirstName,LastName  FROM Contacts )
+FROM Account
+WHERE Id IN (SELECT AccountId FROM Contact WHERE LastName LIKE 'F%')
+
+

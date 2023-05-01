@@ -1,0 +1,59 @@
+//Get all Contact Name and Account Name that contact belong to
+//Filter the contact to only show contact with Account
+
+//SELECT Name , AccountId, Account.Name
+//FROM Contact
+//WHERE AccountId != null 
+
+//Get all Case Subject and Account Name that Case belong to
+//Filter the contact to only show only Cases that belong to Account 
+//SELECT Subject, Account.Name
+ //FROM Case
+//Where Account.Name = NULL
+
+
+// Get all the casre records Subject and Account Name
+//  that belong to Account with Name 
+// starts with United 
+//SELECT Subject, Account.Name
+// FROM Case
+//WHERE Account.Name LIKE 'United%'
+
+//Show Name of the owner (CreatedBy.Name)
+//SELECT Subject, Account.Name, Contact.Name , CreatedBy.Name
+// FROM Case
+//WHERE Account.Name LIKE 'United%'
+
+//Get all Opp Name, Owner Name, Account Name
+// From Opportunity 
+
+//SELECT Name, Owner.Name, Account.Name
+//FROM Opportunity 
+
+//SELECT  Name, Price__c, CreatedBy.Name, Contact__r.Name
+//FROM Book__c
+//ORDER BY Contact__r.Name ASC NULLS LAST
+
+//SELECT  Name, Price__c, Contact__r.Name
+//FROM Book__c
+//ORDER BY Contact__r.Name  DESC NULLS LAST
+
+// Get All the Books Name, Price, Contact Name 
+// Sort the result by Conact Name and show empty values on the botton 
+// Filter the result to show only Books with Contact Name Snow 
+//SELECT  Name, Price__c, Contact__r.Name
+//FROM Book__c
+//WHERE Contact__r.Name = 'Snow'
+//https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_agg_functions.htm
+
+
+// aggregate functions in a GROUP BY clause in SOQL queries to generate reports for analysis.
+// Aggregate functions include AVG(), COUNT(), MIN(), MAX(), SUM(), and more.
+SELECT COUNT(Id) , SUM(Amount), MAX(Amount), MIN(Amount), AVG(Amount)
+FROM OPPORTUNITY
+
+
+
+
+
+

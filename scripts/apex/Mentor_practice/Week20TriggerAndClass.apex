@@ -1,0 +1,1 @@
+ContactData.generateContacts(3, 'Lugova');

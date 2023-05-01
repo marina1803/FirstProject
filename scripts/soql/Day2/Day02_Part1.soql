@@ -1,0 +1,95 @@
+// Use .soql files to store SOQL queries.
+// You can execute queries in VS Code by selecting the
+//     query text and running the command:
+//     SFDX: Execute SOQL Query with Currently Selected Text
+
+//SELECT Id, Name, AnnualRevenue, Phone
+ //FROM Account
+
+
+//SELECT FirstName, LastName, Fax, Id, Birthdate
+ //FROM Contact
+//WHERE FirstName != 'John'
+
+//Get all the Profiles Id, Name fields
+//if the profile name is System administarator, Standart User, Standart Platform user
+// Feel free to use SOQL Building(by flipping the page)
+// to observe what's the correct Object name and fields names 
+
+// Get All the Profiles Id, Name fields 
+// if the profile name is 
+// System Administator, Standard User , Standard Platform User
+
+
+// Get All the Roles , Id, Name From Role Standard Object 
+//SELECT  Id, Name
+//FROM Profile
+//WHERE Name IN ('System Administrator','Standard User','Standard Platform User')
+
+//SELECT Id, Name, DeveloperName
+//  FROM UserRole
+
+//SELECT Id, Name, DeveloperName
+ // FROM RecordType
+
+//SELECT  Id, Author__c, Price__c, Description__c, Year__c
+//FROM Book__c
+//WHERE Description__c != NULL
+//OR Price__c != NULL 
+
+//SELECT FIELDS(ALL)
+ //FROM Book__c
+ //LIMIT 200
+
+ //Partial Condition, FUZZY SEARCH
+
+ //RELATIONAL OPERTOR > >= < <= != IN NOT IN
+
+// LIKE % (WILD CARD, it can represent 0 or more characters)
+// GET all contacts FIRST Anme and LAst NAME
+//if First Name starts with letter A
+//WE can use LIKE '%'
+//it matches Alba, Joshua, BA, PA, 12312A
+
+//SELECT FirstName, LastName
+ //FROM Contact
+ //WHERE FirstName LIKE 'JO%'
+
+// SELECT FirstName, LastName
+// FROM Contact
+// WHERE FirstName LIKE '%A'
+
+//Contains LIKE '%A%'
+
+//SELECT FirstName, LastName
+//FROM Contact
+ //WHERE FirstName LIKE 'A%Y' 
+
+//SELECT FirstName, LastName
+//FROM Contact
+//WHERE FirstName LIKE 'A__Y' 
+
+//Get ALl the contacts created today
+// if you use actual date 
+//SOQL require Date aling with the time exactly in this format 2023-03-23T12:47:11Z 
+
+//SELECT FirstName, LastName
+ //FROM Contact
+//WHERE  CreatedDate = YESTERDAY
+
+// all Opp created past 2 weeks SELECT
+ //SELECT Name, CloseDate, StageName
+ // FROM Opportunity
+ //  WHERE CreatedDate = LAST_N_WEEKS:2
+
+// Get all the opportunity ClosedDate is Last 90 Days 
+SELECT Name, CloseDate, StageName
+ FROM Opportunity
+ WHERE CloseDate = LAST_90_DAYS
+ ORDER BY CloseDate Desc
+ 
+
+
+
+
+

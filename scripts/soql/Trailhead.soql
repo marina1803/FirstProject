@@ -1,0 +1,44 @@
+//SELECT Name, Email FROM Contact
+
+//SELECT Name, Email FROM Contact WHERE FirstName = 'Stella'
+
+//  AND
+//SELECT Name, Email
+//FROM Contact
+//WHERE FirstName = 'Stella' AND LastName = 'Pavlova'
+
+//  OR
+//Use OR to return records that meet one of two conditions.
+// This query returns records with the last name James or the last name Barr.
+//SELECT Name, Email
+//FROM Contact
+//WHERE LastName = 'James' OR LastName = 'Barr'
+
+//  IN
+//Use IN to return records that meet at least one of three or more conditions.
+// The IN clause is commonly used to return the values of a picklist, or values from a LIST or SET.
+// IN simplifies a query that would otherwise have many OR conditions.
+//This query returns all records that have the last name James, Barr, Nedaerk, or Forbes.
+//SELECT Name, Email
+//FROM Contact
+//WHERE LastName = 'James' OR LastName = 'Barr'
+
+//  LIMIT
+//SELECT Email, Name FROM Contact LIMIT 5
+
+//  ORDER BY  ASC
+//SELECT Name, Email FROM Contact
+//ORDER BY Name ASC
+//LIMIT 5
+
+// ORDER BY DESC
+//SELECT Name, Email FROM Contact
+//ORDER BY Email DESC
+//LIMIT 5
+
+// ORDER BY NULLS FIRST | LAST
+SELECT Name, Email FROM Contact
+ORDER BY Email
+NULLS LAST
+
+

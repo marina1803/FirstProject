@@ -1,0 +1,1 @@
+ContactFactory.generateContacts(3, 'Ming');
