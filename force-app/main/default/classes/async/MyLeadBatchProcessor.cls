@@ -45,7 +45,6 @@ public class MyLeadBatchProcessor implements Database.Batchable<sObject> {
                 // add it to the updatedLeads
                 updatedLeads.add(each);
             }
-            
 
             //use DML to update
             update updatedLeads;

@@ -18,4 +18,16 @@ public class AsyncUtil {
         
     }
 
+    @future
+    public static void updateCurrentUserRoleToCFO(){
+        Id userId = UserInfo.getUserId();
+        UserRole roleCFO = [SELECT Id,Name from UserRole Where Name='CFO']; 
+        User u = [SELECT Id, FirstName, Division FROM USER 
+                    WHERE Id = :userId]; 
+        // // update division field to Education 
+        // u.Division = 'Education' ; 
+        u.UserRoleId = roleCFO.Id ; 
+        update u ;
+    }
+
 }

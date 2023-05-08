@@ -1,4 +1,4 @@
-Dildora Ata — Today at 11:03 AM
+
 //Square s = new Square('Box', 10);
 //Rectangle s = new new Square('Box',10);
 Shape s = new Square('Box', 10);

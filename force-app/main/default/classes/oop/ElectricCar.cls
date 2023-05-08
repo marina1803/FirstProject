@@ -1,7 +1,11 @@
-public class ElectricCar extends Car{
+public virtual class ElectricCar extends Car{
    
     public Integer batteryCapacity;
 
+
+    public ElectricCar(){
+        
+    }
     public ElectricCar(String model, Decimal price, Integer batteryCapacity){
         super(model, price);
         this.batteryCapacity = batteryCapacity;
