@@ -1,0 +1,2 @@
+//UserHttpCallout.HttpGetOneUser();
+UserHttpCallout.HttpPostUser();

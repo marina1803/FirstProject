@@ -16,6 +16,9 @@
 // System.debug('myVar value is : ' + myLeads.size());
 
 MyLeadBatchProcessor mlp = new MyLeadBatchProcessor(); 
-Database.executeBatch(mlp,100) ; 
+Database.executeBatch(mlp,2000) ; 
+
+//one shot version
+// Database.executeBatch(new MyLeadBatchProcessor(), 200);
 
 
