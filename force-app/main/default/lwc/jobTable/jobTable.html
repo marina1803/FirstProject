@@ -1,0 +1,31 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Jobs - Datatable" icon-name="utility:table">
+        <div class="slds-m-around_medium">
+            
+        <lightning-input 
+        type="search"
+        label="Search Job" 
+        placeholder="type here..." 
+        value={searchKey} 
+        onchange={handleSearchKeyChange}
+        ></lightning-input>
+
+
+        <template lwc:if={searchKey}>
+            <p>You are searching for: {searchKey}</p>
+          </template>
+          
+        <br>
+
+    <!-- sldsValidatorIgnoreNextLine -->
+        
+    <lightning-datatable
+        key-field="jobId"
+        data={jobs}
+        columns={columns}>
+    </lightning-datatable>
+
+        </div>
+    </lightning-card>
+</template>
