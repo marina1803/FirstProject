@@ -6,7 +6,8 @@ export default class Practice20 extends LightningElement {
     highestOppAmount; 
     error; 
 
-
+    // wiring using function 
+    // the result will be assigned to method param 
     @wire(getMaxOppAmount)
     wiringUsingMethod( result ) {
         
@@ -20,10 +21,11 @@ export default class Practice20 extends LightningElement {
 
     }
 
-
+    // wiring using the property 
+    // the result will be assigned to property 
     // @wire(getMaxOppAmount)
     // highestOppAmount; 
-
+    
     // // get the wired data in prettified string format
     // // to understand the structure of what we got
     // get highestOppAmountInstr() {
