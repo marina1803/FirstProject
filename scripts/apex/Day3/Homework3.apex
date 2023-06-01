@@ -21,7 +21,7 @@ If the number is negative, the program should print “negative”
 Else print Zero
  */
  Integer mathNumber = 0;
-if (mathNumber>0){
+        if (mathNumber>0){
     System.debug('Positive');  
 }else if (mathNumber<0){
     System.debug('negative');
