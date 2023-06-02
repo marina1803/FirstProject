@@ -6,26 +6,48 @@ export default class Practice20 extends LightningElement {
     highestOppAmount; 
     error; 
 
-    // wiring using function 
-    // the result will be assigned to method param 
+    /**
+     * {
+     *  data: some data goes here if return successfully
+     *  error : if you have error 
+     * }
+     */
     @wire(getMaxOppAmount)
-    wiringUsingMethod( result ) {
+    wiringIntoThisMethodParam({ data, error} ) { // destruct the wired result into 2 variables data, error
         
-        if (result.data) {
-            this.highestOppAmount = result.data; 
+        console.log(data); 
+
+        if (data) {
+            this.highestOppAmount = data; 
             this.error = undefined; 
-        } else if (result.error) {
-            this.error = result.error; 
+        } else if (error) {
+            this.error = error; 
             this.highestOppAmount = undefined; 
         }
 
     }
 
-    // wiring using the property 
-    // the result will be assigned to property 
+
+    // wire the result of apex method into function parameter  
+    // @wire(getMaxOppAmount)
+    // wiringUsingMethod( result ) {
+        
+    //     console.log(result); 
+
+    //     if (result.data) {
+    //         this.highestOppAmount = result.data; 
+    //         this.error = undefined; 
+    //     } else if (result.error) {
+    //         this.error = result.error; 
+    //         this.highestOppAmount = undefined; 
+    //     }
+
+    // }
+
+    // wire the result of apex method into property 
     // @wire(getMaxOppAmount)
     // highestOppAmount; 
-    
+
     // // get the wired data in prettified string format
     // // to understand the structure of what we got
     // get highestOppAmountInstr() {
