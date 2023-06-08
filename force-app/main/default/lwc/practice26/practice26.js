@@ -3,8 +3,23 @@ import { LightningElement, wire} from "lwc";
 import NAME_FIELD from "@salesforce/schema/Opportunity.Name";
 import STAGE_FIELD from "@salesforce/schema/Opportunity.StageName";
 import CLOSE_DATE_FIELD from "@salesforce/schema/Opportunity.CloseDate";
+import USER_ID from '@salesforce/user/Id';
+import USERNAME_FIELD from "@salesforce/schema/User.Username";
+import EMAIL_FIELD from "@salesforce/schema/User.Email";
 
 export default class Practice26 extends LightningElement {
+
+    userId = USER_ID;//assign imported id into the property so we can use it next
+
+    @wire(getRecord, { recordId: '$userId', fields:[USERNAME_FIELD, EMAIL_FIELD]  })
+    currentUser; 
+
+    get username() {
+        return getFieldValue(this.currentUser.data, USERNAME_FIELD); 
+    }
+    get userEmail() {
+        return getFieldValue(this.currentUser.data, EMAIL_FIELD); 
+    }
 	
     recordId = '006Dn00000A4Mg5IAF';
 
@@ -14,7 +29,9 @@ export default class Practice26 extends LightningElement {
     // basically it saves you from writing apex methods for common operations like this
     // one common js method is getRecord( recordId , fields you want in array)
     // and we need to use @wire to wire that into property or function
-    @wire(getRecord, {recordId : '$recordId' , fields:[ NAME_FIELD,STAGE_FIELD,CLOSE_DATE_FIELD ] }  )
+    @wire(getRecord, {
+        recordId : '$recordId' ,
+        fields:[ NAME_FIELD,STAGE_FIELD,CLOSE_DATE_FIELD ] }  )
     opp;
 
     //easier way to get the field value aout of the wired result from getRecord method is

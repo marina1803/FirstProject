@@ -4,11 +4,15 @@ public with sharing class AccountController {
      * Create a static method called getAllAccounts
      * @return all the accounts in your salesforce org
      */
+    @AuraEnabled(cacheable=true)
     public static List<Account> getAllAccounts(){
 
-        return [SELECT Name, AnnualRevenue FROM Account];
- 
-     }
+       return [SELECT Name, AnnualRevenue 
+               FROM Account
+               ORDER BY CreatedDate Desc
+               ];
+
+    }
    
 
    
