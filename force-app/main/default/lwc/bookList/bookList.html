@@ -1,0 +1,18 @@
+<template>
+   
+    <!-- book list component has single responsibility of 
+        showing all bookItems in the foreach directive
+     onselect event handling taken out of the code 
+     because only grandparent need the data not the bookList-->
+    <template lwc:if={allBooks}>
+        <template for:each={allBooks} for:item="each">
+
+            <c-book-item 
+                key={each.Id}
+                book={each}
+            ></c-book-item>
+
+        </template>
+    </template>
+
+</template>

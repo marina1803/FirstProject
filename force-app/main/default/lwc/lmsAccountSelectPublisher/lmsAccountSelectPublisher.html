@@ -1,0 +1,30 @@
+<!-- sldsValidatorIgnore -->
+<!-- create a list of account and info button (icon) right beside it  -->
+<template>
+  <lightning-card title="Account Select Publisher" icon-name="standard:account">
+    <div class="slds-var-m-around_medium">
+      <!-- get a list of account and display a account name and info icon -->
+
+      <template lwc:if={allAccounts.data}>
+        <template for:each={allAccounts.data} for:item="each">
+          <lightning-layout key={each.Id}>
+            <lightning-layout-item size="10" padding="around-small">
+              <p>{each.Name}</p>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="2" padding="around-small">
+              <lightning-button-icon
+                icon-name="action:info"
+                alternative-text="Detail"
+                class="slds-m-left_xx-small"
+                onclick={handleShowDetail}
+                data-id={each.Id}
+              >
+              </lightning-button-icon>
+            </lightning-layout-item>
+          </lightning-layout>
+        </template>
+      </template>
+    </div>
+  </lightning-card>
+</template>

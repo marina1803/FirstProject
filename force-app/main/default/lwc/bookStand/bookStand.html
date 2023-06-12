@@ -1,0 +1,22 @@
+<template>
+  <lightning-card title="Book Stand" icon-name="custom:custom55">
+    <div class="slds-var-m-around_medium">
+      <!-- break the section to 2 part 4_12  8_12 -->
+      <lightning-layout>
+        <!-- in first section show full book detail 
+                using a lightning read only form -->
+        <lightning-layout-item size="4" padding="around-small">
+          <!-- <p>Selected Book Id is {selectedBookId} </p> -->
+          <c-book-form record-id={selectedBookId}> </c-book-form>
+        </lightning-layout-item>
+        <!-- Show list of BookItem by getting the data from apex -->
+        <lightning-layout-item size="8" padding="around-small">
+          <!-- show allBooks handle the event from grandChild bookItem -->
+          <c-book-list all-books={allBooks} onselect={handleBookSelected}>  </c-book-list> 
+        </lightning-layout-item>
+      
+    </lightning-layout>
+   
+    </div>
+  </lightning-card>
+</template>

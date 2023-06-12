@@ -1,0 +1,16 @@
+<template>
+    
+    <div class="slds-box slds-var-m-bottom_medium slds-theme_inverse">
+        <lightning-icon icon-name="action:new_notebook" size="small" class="slds-var-m-right_small"></lightning-icon>
+        <p class="slds-text-heading_large">  
+           {book.Name}
+        </p>
+        <p>Unit Price: {book.Price__c} </p>
+        <!-- this button will fire custom event for parent or grand parent to listen -->
+        <lightning-button 
+            label="Select Book" 
+            onclick={handleClick}>
+        </lightning-button>
+    </div>
+
+</template>

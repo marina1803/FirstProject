@@ -1,0 +1,22 @@
+<template>
+  <lightning-card title="Account Detail Listener" icon-name="standard:account">
+    <div class="slds-var-m-around_medium">
+      <!-- if there is record id show the form  -->
+      <template lwc:if={recordId}>
+        
+          <lightning-record-form
+            record-id={recordId}
+            object-api-name={objectApiName}
+            layout-type="Full"
+            mode="readonly"
+            columns="3"
+          ></lightning-record-form>
+
+      </template>
+      <!-- if not show a message Select a Book to show Detail   -->
+      <template lwc:else>
+        <p>No Account Selected</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>

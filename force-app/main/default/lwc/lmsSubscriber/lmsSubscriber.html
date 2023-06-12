@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Message Listener On Demand" icon-name="custom:custom53">
+        <div class="slds-var-p-around_medium">
+            <p>Received Message: {receivedMessage}</p>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button 
+                label={buttonLabel} 
+                onclick={handleSubscription}>
+            </lightning-button>
+        </div>
+        
+    </lightning-card>
+</template>
